@@ -10,15 +10,16 @@
     <!-- <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p> -->
   </div>
 </div>
+
 <div class="row">
 
   <?php foreach ($prefeitos as $item) { ?>
-    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-    <img src="..." class="rounded mx-auto d-block" alt="...">
+    <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+      <img src="..." class="rounded mx-auto d-block" alt="...">
       <h2 class="fw-normal"><?= $item['nome_urna'] ?></h2>
       <p>Qtd. Votos: XXXX</p>
       <p>Percentual: XXXX</p>
-      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      <!-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> -->
     </div><!-- /.col-lg-4 -->,
   <?php } ?>
 </div><!-- /.row -->

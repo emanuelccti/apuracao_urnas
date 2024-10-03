@@ -4,21 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BoletimUrnaVotoModel extends Model
+class BuModel extends Model
 {
-    protected $table            = 'boletim_urna_votos';
-    protected $primaryKey       = 'id_boletim_urna_voto';
+    protected $table            = 'bu';
+    protected $primaryKey       = 'id_bu';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [
-        'id_qrcode',
-        'num_candidato',
-        'qtd_votos',
-        'coligacao',
-        'cod_cargo'
-    ];
+    protected $allowedFields    = [];
 
     protected bool $allowEmptyInserts = false;
 

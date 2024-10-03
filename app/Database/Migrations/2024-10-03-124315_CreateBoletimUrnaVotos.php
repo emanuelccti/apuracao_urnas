@@ -9,12 +9,12 @@ class CreateBoletimUrnaVotos extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_boletim_urna_voto' => [
+            'id_qr_codes_voto' => [
                 'type' => 'INT',
                 'auto_increment' => true,
                 'constraint' => 11
             ],
-            'id_boletim_urna' => [
+            'id_qr_code' => [
                 'type' => 'INT',
                 'constraint' => 11
             ],
@@ -38,13 +38,13 @@ class CreateBoletimUrnaVotos extends Migration
                 'constraint' => 11
             ]
         ]);
-        $this->forge->addKey('id_boletim_urna_voto', true);
-        $this->forge->addForeignKey('id_boletim_urna', 'boletim_urna', 'id_boletim_urna');
-        $this->forge->createTable('boletim_urna_votos');
+        $this->forge->addKey('id_qr_codes_voto', true);
+        $this->forge->addForeignKey('id_qr_code', 'qr_codes', 'id_qr_code');
+        $this->forge->createTable('qr_codes_votos');
     }
 
     public function down()
     {
-        $this->forge->dropTable('boletim_urna_votos');
+        $this->forge->dropTable('qr_codes_votos');
     }
 }

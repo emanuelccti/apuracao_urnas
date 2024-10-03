@@ -4,15 +4,22 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class QrCodeModel extends Model
+class QrCodeVotoModel extends Model
 {
-    protected $table            = 'qr_codes';
-    protected $primaryKey       = 'id_qr_code';
+    protected $table            = 'qr_code_votos';
+    protected $primaryKey       = 'id_qr_code_voto';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id_qr_code',
+        'num_candidato',
+        'qtd_votos',
+        'coligacao',
+        'cod_cargo',
+        'num_secao'
+    ];
 
     protected bool $allowEmptyInserts = false;
 

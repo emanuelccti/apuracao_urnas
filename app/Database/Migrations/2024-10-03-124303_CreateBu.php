@@ -5,20 +5,21 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 use CodeIgniter\Database\RawSql;
 
-class CreateBoletimUrna extends Migration
+class CreateBu extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_boletim_urna' => [
+            'id_bu' => [
                 'type' => 'INT',
                 'auto_increment' => true,
                 'constraint' => 11
             ],
-            'qr_code' => [
-                'type' => 'TEXT'
+            'idue' => [
+                'type' => 'VARCHAR',
+                'constraint' => 25
             ],
-            'indice_qrcode' => [
+            'num_secao' => [
                 'type' => 'INT',
                 'constraint' => 11
             ],
@@ -30,13 +31,13 @@ class CreateBoletimUrna extends Migration
                 'type'    => 'TIMESTAMP',
                 'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
-            ]);
-            $this->forge->addKey('id_boletim_urna', true);
-            $this->forge->createTable('boletim_urna');
+        ]);
+        $this->forge->addKey('id_bu', true);
+        $this->forge->createTable('bu');
     }
 
     public function down()
     {
-        $this->forge->dropTable('boletim_urna');
+        $this->forge->dropTable('bu');
     }
 }
