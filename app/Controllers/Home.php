@@ -88,6 +88,11 @@ class Home extends BaseController
                     $isvotos = false;
                 }else{
                     echo sprintf("Partido: %s -> Candidato: %s -> votos: %s\n",$partido,$campo,$valor);
+                    $data [] = [
+                        'partido' => $partido,
+                        'num_candidato' => $campo,
+                        'qtd_votos' => $valor
+                    ];
                 }
                 
             }
